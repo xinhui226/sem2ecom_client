@@ -190,7 +190,7 @@ const AProduct = () => {
               />
             ) : (
               <img
-                src={`http://localhost:7100/products/img/${product._id}`}
+                src={`https://ecom-backend-service.onrender.com/products/img/${product._id}`}
                 alt={product.name}
                 className="max-h-[250px] max-w-[250px]"
               />

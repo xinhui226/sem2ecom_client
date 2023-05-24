@@ -2,12 +2,18 @@ import axios from "axios";
 import localforage from "localforage";
 
 export const register = async (user) => {
-  const res = await axios.post("http://localhost:7100/auth/register", user);
+  const res = await axios.post(
+    "https://ecom-backend-service.onrender.com/auth/register",
+    user
+  );
   return res.data;
 };
 
 export const login = async (user) => {
-  const res = await axios.post("http://localhost:7100/auth/login", user);
+  const res = await axios.post(
+    "https://ecom-backend-service.onrender.com/auth/login",
+    user
+  );
   if (res.data.success) {
     const savedUser = {
       token: res.data.token,
@@ -20,16 +26,23 @@ export const login = async (user) => {
 };
 
 export const checkAuth = async () => {
-  const res = await axios.get("http://localhost:7100/auth/user");
+  const res = await axios.get(
+    "https://ecom-backend-service.onrender.com/auth/user"
+  );
   return res.data;
 };
 
 export const checkIsAdmin = async () => {
-  const res = await axios.get("http://localhost:7100/auth/admin");
+  const res = await axios.get(
+    "https://ecom-backend-service.onrender.com/auth/admin"
+  );
   return res.data;
 };
 
 export const updateUser = async (userdata) => {
-  const res = await axios.put("http://localhost:7100/auth/update", userdata);
+  const res = await axios.put(
+    "https://ecom-backend-service.onrender.com/auth/update",
+    userdata
+  );
   return res.data;
 };

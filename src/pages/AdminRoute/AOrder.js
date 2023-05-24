@@ -91,7 +91,7 @@ const AUser = () => {
                       <img
                         className="max-h-[100px]"
                         alt={order?.items[0]?.product?.name}
-                        src={`http://localhost:7100/products/img/${order?.items[0]?.product?._id}`}
+                        src={`https://ecom-backend-service.onrender.com/products/img/${order?.items[0]?.product?._id}`}
                       />
                     </span>
                     <span>

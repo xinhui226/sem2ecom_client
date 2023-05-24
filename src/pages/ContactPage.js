@@ -34,11 +34,14 @@ const Contactpage = () => {
     if (!email || !subject || !content)
       return toast.error("Please fill in all the fields");
 
-    const res = await axios.post("http://localhost:7100/sendMail", {
-      email,
-      subject,
-      content,
-    });
+    const res = await axios.post(
+      "https://ecom-backend-service.onrender.com/sendMail",
+      {
+        email,
+        subject,
+        content,
+      }
+    );
     if (res.status === 200) {
       toast.success("Message sent successfully");
       setMessage({

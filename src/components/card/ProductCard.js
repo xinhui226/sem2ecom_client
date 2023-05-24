@@ -7,7 +7,7 @@ const Productcard = ({ product }) => {
     <Link to={`/dashboard/admin/product/${product.slug}`}>
       <Card className="border-none">
         <Card.Image
-          src={`http://localhost:7100/products/img/${product._id}`}
+          src={`https://ecom-backend-service.onrender.com/products/img/${product._id}`}
           alt={product.name}
           className="max-w-[300px]"
         />

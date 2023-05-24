@@ -75,7 +75,7 @@ const ProductDetail = () => {
             <div className="border-2 rounded-xl flex justify-center sm:min-h-[40vh]">
               <img
                 alt={product?.name}
-                src={`http://localhost:7100/products/img/${product?._id}`}
+                src={`https://ecom-backend-service.onrender.com/products/img/${product?._id}`}
                 className="object-cover"
               />
             </div>

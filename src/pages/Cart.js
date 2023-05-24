@@ -96,11 +96,14 @@ const Cart = () => {
         subtotal: item.price * item.cartqty,
       })
     );
-    const res = await axios.post("http://localhost:7100/orders", {
-      details: info,
-      total: totalPrice,
-      cart: myCart,
-    });
+    const res = await axios.post(
+      "https://ecom-backend-service.onrender.com/orders",
+      {
+        details: info,
+        total: totalPrice,
+        cart: myCart,
+      }
+    );
 
     if (res.status === 200) {
       const emptyCart = async () => {
@@ -125,7 +128,7 @@ const Cart = () => {
                   cart?.map((c, idx) => (
                     <Card side="sm">
                       <Card.Image
-                        src={`http://localhost:7100/products/img/${c._id}`}
+                        src={`https://ecom-backend-service.onrender.com/products/img/${c._id}`}
                         alt={c.name}
                         className="object-cover"
                         width="max-w-[200px]"

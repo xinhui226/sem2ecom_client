@@ -43,7 +43,7 @@ const CustomerProductcard = ({ product, setCart, cart }) => {
   return (
     <Card className="border-none max-w-[220px] max-h-[280px]">
       <Card.Image
-        src={`http://localhost:7100/products/img/${product._id}`}
+        src={`https://ecom-backend-service.onrender.com/products/img/${product._id}`}
         alt={product.name}
         className="object-cover"
       />
