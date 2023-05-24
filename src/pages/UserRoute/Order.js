@@ -28,9 +28,9 @@ const Order = () => {
       <div className="md:w-[80%] block mx-auto">My Orders</div>
       <div className="flex w-full justify-center p-4 items-center font-sans component-preview">
         <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-7">
-          {orders && orders.length > 0 ? (
+          {orders && orders?.length > 0 ? (
             orders?.map((order) => (
-              <Menu key={order._id} className="">
+              <Menu key={order?._id} className="">
                 {/* <Menu.Item>Order </Menu.Item> */}
                 <ul className="menu w-56 p-2 bg-slate-100 px-5">
                   <li className="menu-title">

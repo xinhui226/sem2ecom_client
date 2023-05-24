@@ -33,18 +33,18 @@ const Login = () => {
 
     try {
       const res = await login(user);
-      if (res.success) {
+      if (res?.success) {
         toast.success("Welcome back", { duration: 3000 });
         setAuth({
           ...auth,
-          user: res.user,
-          token: res.token,
+          user: res?.user,
+          token: res?.token,
         });
         const user = await localforage.getItem("user");
         if (!user) {
           const savedUser = {
-            token: res.token,
-            user: res.user,
+            token: res?.token,
+            user: res?.user,
           };
           await localforage.setItem("user", JSON.stringify(savedUser));
         }

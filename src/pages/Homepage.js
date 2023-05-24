@@ -23,7 +23,7 @@ const Homepage = () => {
     };
     getProductsData();
   }, []);
-  console.log(products);
+  // console.log(products);
   return (
     <Layout title={"Online Store"}>
       <Toaster />

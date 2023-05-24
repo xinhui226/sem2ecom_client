@@ -29,7 +29,7 @@ const Categories = () => {
       getProducts();
     }
   }, [selectCategory]);
-  console.log(products);
+  // console.log(products);
   return (
     <Layout title={"Categories"}>
       <Toaster />
@@ -43,18 +43,19 @@ const Categories = () => {
           onChange={(e) => setSelectCategory(e)}
         >
           <Option value="all">All</Option>
-          {categories.map((cat) => (
-            <Option key={cat._id} value={cat._id}>
-              {cat.name}
-            </Option>
-          ))}
+          {categories &&
+            categories?.map((cat) => (
+              <Option key={cat?._id} value={cat?._id}>
+                {cat?.name}
+              </Option>
+            ))}
         </Select>
-        {products && products.length > 0 ? (
+        {products && products?.length > 0 ? (
           <div className="grid gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
             {products?.map((product) => (
               <CustomerCard
                 product={product}
-                key={product._id}
+                key={product?._id}
                 cart={cart}
                 setCart={setCart}
               />

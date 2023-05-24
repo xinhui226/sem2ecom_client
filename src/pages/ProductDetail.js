@@ -35,7 +35,7 @@ const ProductDetail = () => {
   const addToCart = () => {
     const myCart = [...cart];
     if (myCart.length > 0) {
-      let findItem = myCart.findIndex((p) => p._id === product._id);
+      let findItem = myCart.findIndex((p) => p._id === product?._id);
       if (findItem !== -1) {
         if (myCart[findItem].cartqty >= myCart[findItem].qty) {
           toast.error("Product quantity is exceeded");
@@ -102,7 +102,7 @@ const ProductDetail = () => {
                   <Button
                     className="w-fit block mx-auto"
                     onClick={() =>
-                      redirect("/login", { state: "/product/" + product.slug })
+                      redirect("/login", { state: "/product/" + product?.slug })
                     }
                   >
                     Login
@@ -115,12 +115,12 @@ const ProductDetail = () => {
         <hr className="my-4" />
         <div className="">
           <p>Similar Products</p>
-          {similarProducts && similarProducts.length > 0 ? (
+          {similarProducts && similarProducts?.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:w-[70%]">
               {similarProducts?.map((product) => (
                 <CustomerProductcard
                   product={product}
-                  key={product._id}
+                  key={product?._id}
                   cart={cart}
                   setCart={setCart}
                 />

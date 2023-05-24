@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import { invalidEmail } from "../utils/userValidation";
 import { toast } from "react-hot-toast";
 import { Button, Form, Input } from "react-daisyui";
-import { sendMail } from "../utils/sendMail";
+// import { sendMail } from "../utils/sendMail";
 import axios from "axios";
 
 const Contactpage = () => {
